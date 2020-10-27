@@ -1,0 +1,168 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+  <script src="jquery-ui/external/jquery/jquery.js"></script>
+  <script src="jquery-ui/jquery-ui.min.js"></script>
+
+
+  <script src="timePicker/jquery.simple-dtpicker.js"></script>
+  <link type="text/css" href="timePicker/jquery.simple-dtpicker.css" rel="stylesheet" />
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_-r2K3IPQd5BsC39gTRED6ag8r3pUO-U&libraries=visualization">
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script src="main.js"></script>
+  <link rel="stylesheet" type="text/css" href="base.css">
+  <link rel="shortcut icon" type="image/png" href="media/favicon.png" />
+
+
+  <title>Wifi Log Visualizer</title>
+  <meta content="">
+</head>
+
+
+
+<body>
+
+  <h1><img id="logo" src="media/unccLogo.png"></img>Wifi Log Visualizer 0.8</h1>
+
+  <div id="tabs">
+    <ul>
+      <li><a href="#tab-0">Upload</a></li>
+      <li><a href="#tab-1">Map</a></li>
+      <li><a href="#tab-2">Graph</a></li>
+      <li><a href="#tab-3">Table</a></li>
+    </ul>
+    <div id="tab-0" class="tab">
+
+      <div>
+        <input type="file" id="input-file">
+        <button class="filterBtn" class="bs" id="-" onclick="updateData()">Update Data</button>
+        <br>
+        <textarea readonly id="content-target"></textarea>
+      </div>
+
+      <p id="f"><b>Filters:</b></p>
+      <div class="paramButton" id="param1">
+        <button class="filterBtn" class="bs" id="Assoc" onclick="getAllPops()"> Assoc Success</button>
+        <button class="filterBtn" class="bs" id="Deauth" onclick="getAllPops()"> Deauth Success</button>
+        <button class="filterBtn" class="bs" id="-" onclick="getAllPops()"> View All</button>
+      </div>
+
+    </div>
+
+    <div id="tab-1" class="tab">
+      <div id="map"></div>
+      <p>
+        Start Time:<input class="timePicker" type="text" name="date" value="00:00">
+        End Time:<input class="timePicker" type="text" name="date" value="00:00">
+      </p>
+    </div>
+
+    <div id="tab-2" class="tab" >
+      <div id="chart">
+      </div>
+
+      <p>
+        Start Time:<input class="timePicker" type="text" name="date" value="00:00">
+        End Time:<input class="timePicker" type="text" name="date" value="00:00">
+      </p>
+    </div>
+
+    <div id="tab-3" class="tab">
+
+      <table id="popTable">
+<tr>
+  <th>Location</th>
+  <th>Connected Devices</th>
+  <th>Latest Timestamp</th>
+</tr>
+<tr>
+  <td>Atkins</td>
+  <td id="atkinsTd">Too many</td>
+  <td id = atkinsTime>n/a</td>
+</tr>
+<tr>
+  <td>Coed</td>
+  <td id="coedTd">257</td>
+  <td>n/a</td>
+</tr>
+<tr>
+  <td>Cone</td>
+  <td id="coneTd">543</td>
+  <td>n/a</td>
+</tr>
+<tr>
+  <td>Colvard</td>
+  <td id="colvardTd">Where is this?</td>
+  <td>n/a</td>
+</tr>
+<tr>
+  <td>Duke</td>
+  <td id="dukeTd">98</td>
+  <td>n/a</td>
+</tr>
+<tr>
+  <td>Epic</td>
+  <td id="epicTd">3</td>
+  <td>n/a</td>
+</tr>
+<tr>
+  <td>Fretwell</td>
+  <td id="fretwellTd">3.14i</td>
+  <td>n/a</td>
+</tr>
+<tr>
+  <td>Gage</td>
+  <td id="gageTd">12</td>
+  <td>n/a</td>
+</tr>
+<tr>
+  <td>Hunt</td>
+  <td id="huntTd">223</td>
+  <td>n/a</td>
+</tr>
+<tr>
+  <td>Robinson</td>
+  <td id="robinsonTd">104</td>
+  <td>n/a</td>
+</tr>
+<tr>
+  <td>Rowe</td>
+  <td id="roweTd">210</td>
+  <td>n/a</td>
+</tr>
+<tr>
+  <td>Union</td>
+  <td id="unionTd">318</td>
+  <td>n/a</td>
+</tr>
+<tr>
+  <td>Woodward</td>
+  <td id="woodwardTd"> 666</td>
+  <td>n/a</td>
+</tr>
+</table>
+<div id="tableControls">
+	Start Time:<input class="timePicker" type="text" name="date" value="00:00">
+	End Time:<input class="timePicker" type="text" name="date" value="00:00">
+</div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+</body>
+
+
+</html>
